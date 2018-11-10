@@ -21,12 +21,14 @@ class App extends Component {
 
     Promise.all([ googleMapsPromise, venuesPromise ])
     .then(values => {
+      console.log(values);
       let google = values[0];
       let venues = values[1].response.venues;
-      let markers = [];
-      let infowindow = [];
-
+      // let markers = [];
+      // let infowindow = [];
+      //
       this.google = google;
+      this.markers = [];
       this.infowindow = new google.maps.InfoWindow();
       // this creates and loads map to page
       this.map = new google.maps.Map(document.getElementById('map'), {
@@ -34,8 +36,8 @@ class App extends Component {
         scrollwheel: true,
         center: { lat: venues[0].location.lat, lng: venues[0].location.lng }
       });
-
-      venues = (venue) => {
+      // creates a marker for each venue
+      venues.forEach(venue => {
         let marker = new google.maps.Marker({
           position: { lat: venue.location.lat, lng: venue.location.lng },
           map: this.map,
@@ -45,8 +47,8 @@ class App extends Component {
           // icon: defaultIcon,
           animation: google.maps.Animation.DROP
         });
-        markers.push(marker);
-      }
+        this.markers.push(marker);
+      });
 
       // Listing markers icon (styling)
       // let defaultIcon = makeMarkerIcon('0091ff');
