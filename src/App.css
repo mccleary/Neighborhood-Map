@@ -1,51 +1,150 @@
-html,
 body {
-  font-family: Arial, sans-serif;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-input {
-  font-size: 12px;
-}
-
-h1 {
-  font-size: 22px;
-  margin: 0 0 10px 0;
-  text-align: center;
-}
-
-hr {
-  background: #D0D7D9;
-  height: 1px;
-  margin: 20px 0 20px 0;
-  border: none;
+  overflow: hidden;
 }
 
 #map {
   width: 100%;
-  /* height: calc(100vh - 60px); */
-  height: 100vh;
+  height: calc(100vh - 60px);
+}
+
+/* Nav area */
+h1 {
+  font-size: 36px;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+#header-text {
+  margin: 0px;
+  color: white;
+  height: 60px;
+  line-height: 60px;
+  vertical-align: middle;
+  padding: 0px 20px;
+  word-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  display: inline-block;
+}
+
+.menu {
+  font-size: 25px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* toggle button */
+.hamburger {
+  position: absolute;
+  font-size: 24px;;
+  top: 25%;
+  right: 5%;
+  border-radius: 8%;
+}
+
+.menu-text {
+  float: right;
+  margin: 0px;
+  color: white;
+  height: 60px;
+  line-height: 60px;
+  vertical-align: middle;
+  padding: 0px 15px;
+  word-spacing: 1.5px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
 }
 
 #navbar {
   position: relative;
   z-index: 100;
-  background-color: #222;
-  height: 30px;
-  padding: 20px;
-  color: white;
+  box-shadow: 0px 1px 1px grey;
+  background: black;
+  text-align: center;
+}
+
+/* sidebar */
+h2 {
+  font-size: 10px;
 }
 
 #sidebar {
   position: absolute;
-  display: block;
-  width: 300px;
-  max-width: 100%;
-  overflow-y: scroll;
-  height: 100vh;
-  top: 0;
   z-index: 100;
+  box-shadow: 0px 1px 1px grey;
   background: #f2f2f2;
+  width: 275px;
+  max-width: 100%;
+  height: calc(100vh - 60px);
+  overflow-y: scroll;
+}
+
+#sidebar-filter {
+  padding: 10px;
+}
+
+/* filter search  */
+input {
+  font-size: 25px;
+  text-align: center;
+  border: .5px solid darkblue;
+  border-radius: 3px;
+}
+
+/* Modal pop-out */
+.info_box {
+  width: 200px;
+  text-align: center;
+}
+
+.info_box h4 {
+  color: darkblue;
+  font-size: 16px;
+}
+
+p {
+  color: black;
+  font-weight: bolder;
+}
+
+.venue-name {
+  font-size: 20px;
+  color: darkblue;
+  text-decoration: none;
+  background-color: transparent;
+
+}
+
+.venue-div {
+  border: .5px solid darkblue;
+  border-radius: 3px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+
+
+/* =====================  Media Queries  ============================== */
+@media screen and (max-width: 500px) {
+  #header-text {
+    font-size: 20px;
+    padding: 0px 10px;
+  }
+  .hamburger {
+    position: absolute;
+    font-size: 24px;;
+    top: 25%;
+    right: 5%;
+    border-radius: 8%;
+  }
+  #nav-bar {
+    height: 0;
+    padding: 30px;
+  }
+  #sidebar {
+    font-size: 1rem;
+    padding: 0;
+  }
+  .menu-text {
+    padding: 0px 10px;
+  }
 }
